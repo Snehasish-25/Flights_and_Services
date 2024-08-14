@@ -15,7 +15,7 @@ Since we don't want to make our index.js file clumsy with environment varible de
 In industrial level projects there are more than 1.env file like .env(dev) ,.env(for production), .env(for testing)
 The separate .env files contain configs accordingly
 
-MySql2 helps in binding our sql server to the sequilize ORM.It provides us the necessary drivers to connect sequilize with mysql server
+MySql2 helps in binding/connecting our sql server to the sequilize ORM.It provides us the necessary drivers to connect sequilize with mysql server.
 
 do npx sequelize init outside the src folder because if done inside the src folder it will overwrite the entire src folder and then move the models folder created due to npx sequelize init inside the src folder and delete the already created models folder
 
@@ -23,4 +23,6 @@ move the migrations,seeders folder inside the src and also the config.json file
 
 Now inside the src folder write npx sequelize db:create-->This will create a database for us but before that we need to configure our DB in the config.json file
 
-**Should we put our Db password inside .env file -->
+**Should we put our Db password inside .env file --> No because we cannot access that password inside our config.json using process.env.<>
+
+--> MVC pattern is a pattern to segregate your logic inside one servicee and if we put all the services inside one single folder it becomes monolith.
